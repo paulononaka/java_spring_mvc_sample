@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean
+		id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:prefix="/WEB-INF/jsp/"
+		p:suffix=".jsp"
+		p:viewClass="org.springframework.web.servlet.view.JstlView" />
+
+	<context:component-scan
+		base-package="com.paulononaka.web.controllers" />
+
+	<!-- Action Handling -->
+	<!-- BeanNameUrlHandlerMapping This configuration is optional because BeanNameUrlHandlerMapping is the default handler. 
+		In case no handler mapping is found in the web application context, SpringMVC will create an instance of BeanNameUrlHandlerMapping. -->
+	<bean
+		name="beanNameUrlHandlerMapping"
+		class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
+	<!-- end of Action Handling -->
+
+	<!-- Page Controller -->
+	<bean
+		name="/index.html"
+		class="com.paulononaka.web.controllers.IndexController"
+		p:registerService="registerService"
+		p:registerService-ref="registerService" />
+
+	<bean
+		name="/view.html"
+		class="com.paulononaka.web.controllers.ViewRegisterController" />
+
+	<bean
+		name="/add.html"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+		p:viewName="registerEdit" />
+
+	<bean
+		name="/update.html"
+		class="com.paulononaka.web.controllers.UpdateRegisterController" />
+
+	<bean
+		name="/save.html"
+		class="com.paulononaka.web.controllers.SaveRegisterController" />
+
+	<bean
+		name="/delete.html"
+		class="com.paulononaka.web.controllers.DeleteRegisterController" />
+	<!-- end of Page Controller -->
+
+</beans>

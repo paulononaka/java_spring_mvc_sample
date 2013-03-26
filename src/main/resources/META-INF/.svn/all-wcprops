@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/paulononaka/poi/svn/!svn/ver/8/poi/server/src/main/resources/META-INF
+END
+jdoconfig.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/paulononaka/poi/svn/!svn/ver/8/poi/server/src/main/resources/META-INF/jdoconfig.xml
+END
+persistence.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/paulononaka/poi/svn/!svn/ver/8/poi/server/src/main/resources/META-INF/persistence.xml
+END
